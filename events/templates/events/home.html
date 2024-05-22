@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Event Planner</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+        }
+        header {
+            background: #333;
+            color: #fff;
+            padding-top: 30px;
+            min-height: 70px;
+            border-bottom: #77aaff 3px solid;
+        }
+        header a {
+            color: #fff;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 16px;
+        }
+        #main {
+            padding: 20px;
+            background: #fff;
+            margin-top: 20px;
+        }
+        .event {
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 10px;
+            margin-bottom: 10px;
+        }
+        .event h2 {
+            margin: 0;
+            padding: 0;
+        }
+        .event p {
+            margin: 5px 0;
+            padding: 0;
+        }
+        .book-link {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 10px 15px;
+            background: #77aaff;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .book-link:hover {
+            background: #555;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Event Planner</h1>
+        </div>
+    </header>
+    <div id="main" class="container">
+        <h1>Available Events</h1>
+        <ul>
+            {% for event in events %}
+            <li class="event">
+                <h2>{{ event.title }}</h2>
+                <p>{{ event.description }}</p>
+                <p>Date: {{ event.date }}</p>
+                <p>Location: {{ event.location }}</p>
+                <a class="book-link" href="{% url 'book_event' event.id %}">Book Now</a>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>
