@@ -2,7 +2,7 @@
 
 This is a simple site that allows users to register to or book events. The registration details are saved in an admin database and able to be accessed and managed on the back end.
 
-[Software Demo Video](http://youtube.link.goes.here)
+[Software Demo Video](https://youtu.be/kXC8bSuRUzM)
 
 # Web Pages
 
